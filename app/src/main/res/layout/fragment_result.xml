@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FCFCEC"
+    tools:context=".Credit" >
+
+    <Button
+        android:id="@+id/toRecommendOutfitButton"
+        android:layout_width="176dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="4dp"
+        android:shadowColor="#613030"
+        android:shadowDx="7"
+        android:shadowDy="5"
+        android:shadowRadius="1"
+        android:text="@string/to_recommend_outfit_button"
+        android:textColor="#B4A531"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:backgroundTint="#FD9727"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.931" />
+
+    <Button
+        android:id="@+id/toHomeButton"
+        android:layout_width="176dp"
+        android:layout_height="64dp"
+        android:shadowColor="#613030"
+        android:shadowDx="7"
+        android:shadowDy="5"
+        android:shadowRadius="1"
+        android:text="@string/to_home_button"
+        android:textColor="#B4A531"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:backgroundTint="#89E85C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/toRecommendOutfitButton"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.931" />
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/result_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

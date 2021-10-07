@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/Home">
+
+    <fragment
+        android:id="@+id/Home"
+        android:name="com.example.skeletaldiagnosis.Home"
+        android:label="@string/home_label"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_Home_to_Diagnosis"
+            app:destination="@id/Diagnosis" />
+        <action
+            android:id="@+id/action_Home_to_Credit"
+            app:destination="@id/Credit" />
+        <action
+            android:id="@+id/action_Home_to_RecommendOutfit"
+            app:destination="@id/RecommendOutfit" />
+    </fragment>
+    <fragment
+        android:id="@+id/Diagnosis"
+        android:name="com.example.skeletaldiagnosis.Diagnosis"
+        android:label="@string/diagnosis_label"
+        tools:layout="@layout/fragment_diagnosis">
+        <action
+            android:id="@+id/action_Diagnosis_to_DiagnosisEnd"
+            app:destination="@id/DiagnosisEnd" />
+    </fragment>
+    <fragment
+        android:id="@+id/Credit"
+        android:name="com.example.skeletaldiagnosis.Credit"
+        android:label="@string/credit_label"
+        tools:layout="@layout/fragment_credit" >
+        <action
+            android:id="@+id/action_Credit_to_Home"
+            app:destination="@id/Home" />
+    </fragment>
+    <fragment
+        android:id="@+id/RecommendOutfit"
+        android:name="com.example.skeletaldiagnosis.RecommendOutfit"
+        android:label="RecommendOutfit" >
+        <action
+            android:id="@+id/action_RecommendOutfit_to_Home"
+            app:destination="@id/Home" />
+    </fragment>
+    <fragment
+        android:id="@+id/DiagnosisEnd"
+        android:name="com.example.skeletaldiagnosis.DiagnosisEnd"
+        android:label="DiagnosisEnd" >
+        <action
+            android:id="@+id/action_DiagnosisEnd_to_Result"
+            app:destination="@id/Result" />
+    </fragment>
+    <fragment
+        android:id="@+id/Result"
+        android:name="com.example.skeletaldiagnosis.Result"
+        android:label="Result" >
+        <action
+            android:id="@+id/action_Result_to_Home"
+            app:destination="@id/Home" />
+        <action
+            android:id="@+id/action_Result_to_RecommendOutfit"
+            app:destination="@id/RecommendOutfit" />
+    </fragment>
+</navigation>

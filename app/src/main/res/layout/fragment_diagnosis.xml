@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FCFCEC"
+    tools:context=".Diagnosis">
+
+    <Button
+        android:id="@+id/choiceWaveButton"
+        android:layout_width="361dp"
+        android:layout_height="73dp"
+        android:layout_marginBottom="1dp"
+        android:text="@string/wave_choice_question"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:backgroundTint="#66CBFF"
+        app:layout_constraintBottom_toTopOf="@+id/choiceNaturalButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/choiceStraightButton"
+        app:layout_constraintVertical_bias="0.47" />
+
+    <Button
+        android:id="@+id/choiceStraightButton"
+        android:layout_width="361dp"
+        android:layout_height="73dp"
+        android:layout_marginBottom="1dp"
+        android:text="@string/straight_choice_question"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:backgroundTint="#FF5454"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.679" />
+
+    <Button
+        android:id="@+id/choiceNaturalButton"
+        android:layout_width="361dp"
+        android:layout_height="73dp"
+        android:layout_marginBottom="1dp"
+        android:text="@string/natural_choice_question"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:backgroundTint="#63FF64"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.952" />
+
+    <TextView
+        android:id="@+id/questionText"
+        android:layout_width="367dp"
+        android:layout_height="199dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/shape_rounded_corners"
+        android:text="@string/question_text"
+        android:textSize="18sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/choiceStraightButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
