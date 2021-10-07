@@ -66,5 +66,5 @@ class Diagnosis : Fragment() {
         }
 
     }
-    
+
 }

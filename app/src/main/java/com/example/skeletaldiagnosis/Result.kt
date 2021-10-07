@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
 
 
 class Result : Fragment() {
@@ -20,6 +22,17 @@ class Result : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_result, container, false)
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        view.findViewById<Button>(R.id.toHomeButton).setOnClickListener {
+            findNavController().navigate(R.id.action_Result_to_Home)
+        }
+        view.findViewById<Button>(R.id.toRecommendOutfitButton).setOnClickListener {
+            findNavController().navigate(R.id.action_Result_to_RecommendOutfit)
+        }
+
     }
 
 
