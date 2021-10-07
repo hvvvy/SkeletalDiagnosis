@@ -30,7 +30,9 @@ class Result : Fragment() {
             findNavController().navigate(R.id.action_Result_to_Home)
         }
         view.findViewById<Button>(R.id.toRecommendOutfitButton).setOnClickListener {
-            findNavController().navigate(R.id.action_Result_to_RecommendOutfit)
+            val action = ResultDirections.actionResultToRecommendOutfit(1)
+            findNavController().navigate(action)
+           // findNavController().navigate(R.id.action_Result_to_RecommendOutfit)
         }
 
     }
