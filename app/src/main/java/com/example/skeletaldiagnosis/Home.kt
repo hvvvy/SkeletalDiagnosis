@@ -27,7 +27,6 @@ Home : Fragment() {
             findNavController().navigate(R.id.action_Home_to_Diagnosis)
         }
         view.findViewById<Button>(R.id.outfitButton).setOnClickListener {
-            //val action = R.id.action_Home_to_RecommendOutfit("a")
             val action = HomeDirections.actionHomeToRecommendOutfit(0)
             findNavController().navigate(action)
         }

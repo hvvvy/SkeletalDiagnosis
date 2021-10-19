@@ -1,11 +1,16 @@
 package com.example.skeletaldiagnosis
 
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.example.skeletaldiagnosis.db.DataCreate
+import com.example.skeletaldiagnosis.db.Item
+import com.example.skeletaldiagnosis.db.ItemDatabase
+import java.time.LocalDate
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,6 +23,10 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
+
+        //itemテーブルが空の場合テーブルを作成する
+        val dataCreate =  DataCreate()
+        dataCreate.ItemDataCreate(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -1,23 +1,49 @@
 package com.example.skeletaldiagnosis
 
+import android.app.Dialog
+import android.graphics.Point
+import android.graphics.drawable.BitmapDrawable
 import android.util.Log
+import android.view.Display
 import android.view.View
+import android.view.Window
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContentProviderCompat.requireContext
 import java.time.LocalDate
 
-class Analysis(val date: LocalDate, var straightTypePoint: Int, var waveTypePoint: Int, var naturalTypePoint: Int) {
+class Analysis(val date: LocalDate, var view:View ,var straightTypePoint: Int, var waveTypePoint: Int, var naturalTypePoint: Int,var boneType: Int) {
 
+    //何番目の質問かをカウントする
+    private var questionsCount = 0
 
-    fun analyzeBoneType() {}
+    private val questionText = view.findViewById<TextView>(R.id.questionText)
+    private val choiceStraightButton = view.findViewById<Button>(R.id.choiceStraightButton)
+    private val choiceWaveButton = view.findViewById<Button>(R.id.choiceWaveButton)
+    private val choiceNaturalButton = view.findViewById<Button>(R.id.choiceNaturalButton)
+
+    fun analyzeBoneType():Int {
+        //straightTypePoint,waveTypePoint,naturalTypePointを比較し、最大値だった骨格ポイントを判定してboneTypeにInt型で骨格タイプを割り振る
+        //このメソッドはDiagnosis.ktの選択ボタン押下後のif文内(質問が終了した段階)で呼び出される
+
+        if (straightTypePoint >= waveTypePoint && straightTypePoint >= naturalTypePoint){   //straightTypePointが最大値の場合
+            //0 == ストレートタイプ
+            boneType = 0
+        }else if (waveTypePoint >= straightTypePoint && waveTypePoint >= naturalTypePoint){ //waveTypePointが最大値の場合
+            //1 == ウェーブタイプ
+            boneType = 1
+        }else if (naturalTypePoint >= straightTypePoint && naturalTypePoint >= waveTypePoint){  //naturalTypePointが最大値の場合
+            //2 == ナチュラルタイプ
+            boneType = 2
+        }
+
+        return boneType
+    }
 
     fun displayAnalysisResult() {}
 
     fun resetQuestion(view: View){
-        val questionText = view.findViewById<TextView>(R.id.questionText)
-        val choiceStraightButton = view.findViewById<Button>(R.id.choiceStraightButton)
-        val choiceWaveButton = view.findViewById<Button>(R.id.choiceWaveButton)
-        val choiceNaturalButton = view.findViewById<Button>(R.id.choiceNaturalButton)
 
         questionsCount = 0
 
@@ -25,10 +51,8 @@ class Analysis(val date: LocalDate, var straightTypePoint: Int, var waveTypePoin
         choiceStraightButton.text = R.string.straight_choice_question.toString()
         choiceWaveButton.text = R.string.wave_choice_question.toString()
         choiceNaturalButton.text = R.string.natural_choice_question.toString()
-
     }
 
-    var questionsCount = 0
 
     private val questions = listOf(
         "Q2.筋肉や脂肪の付き具合は？",
@@ -68,14 +92,9 @@ class Analysis(val date: LocalDate, var straightTypePoint: Int, var waveTypePoin
     //onBoneTypeChoiceButtonClick(view: View)メソッド内で使用する
     private fun showNextQuestions(view: View) {
 
-        val questionText = view.findViewById<TextView>(R.id.questionText)
-        val choiceStraightButton = view.findViewById<Button>(R.id.choiceStraightButton)
-        val choiceWaveButton = view.findViewById<Button>(R.id.choiceWaveButton)
-        val choiceNaturalButton = view.findViewById<Button>(R.id.choiceNaturalButton)
-
 
         //質問数が初期表示を除き8個ある
-        //8個までは順次テキストを入れ替えていき、8個を超えた時点で結果画面へ遷移する
+        //8個までは順次テキストを入れ替える
         if (questionsCount < 7) {
 
             questionText.text = questions[questionsCount]

@@ -29,39 +29,56 @@ class Diagnosis : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         var questionEndCheck  = 0
-        val analysis = Analysis(LocalDate.now(),0,0,0)
+        val analysis = Analysis(LocalDate.now(),view,0,0,0,0)
 
 
         val choiceStraightButton = view.findViewById<Button>(R.id.choiceStraightButton)
         choiceStraightButton.setOnClickListener {
+            //選択ボタンを押下するたびonBoneTypeChoiceButtonClickからquestionsCountを随時取得しquestionEndCheckに格納
             questionEndCheck  = analysis.onBoneTypeChoiceButtonClick(view,0)
 
             Log.i("iSearch","$questionEndCheck")
+            //questionEndCheckが7以上になった場合、つまり質問が終了した場合、診断終了画面に遷移し、質問のカウント数を初期化する
             if (questionEndCheck > 7){
                 findNavController().navigate(R.id.action_Diagnosis_to_DiagnosisEnd)
                 analysis.resetQuestion(view)
+                //UserクラスのuserBoneTypeに分析した骨格タイプを格納
+                User.userBoneType = analysis.analyzeBoneType()
+                Log.i("userBoneTypeCheack","${User.userBoneType}")
+
             }
         }
 
         val choiceWaveButton = view.findViewById<Button>(R.id.choiceWaveButton)
         choiceWaveButton.setOnClickListener {
+            //選択ボタンを押下するたびonBoneTypeChoiceButtonClickからquestionsCountを随時取得しquestionEndCheckに格納
             questionEndCheck = analysis.onBoneTypeChoiceButtonClick(view,1)
 
             Log.i("iSearch","$questionEndCheck")
+            //questionEndCheckが7以上になった場合、つまり質問が終了した場合、診断終了画面に遷移し、質問のカウント数を初期化する
             if (questionEndCheck > 7){
                 findNavController().navigate(R.id.action_Diagnosis_to_DiagnosisEnd)
                 analysis.resetQuestion(view)
+                //UserクラスのuserBoneTypeに分析した骨格タイプを格納
+                User.userBoneType = analysis.analyzeBoneType()
+                Log.i("userBoneTypeCheack","${User.userBoneType}")
             }
         }
 
         val choiceNaturalButton = view.findViewById<Button>(R.id.choiceNaturalButton)
         choiceNaturalButton.setOnClickListener {
+            //選択ボタンを押下するたびonBoneTypeChoiceButtonClickからquestionsCountを随時取得しquestionEndCheckに格納
             questionEndCheck = analysis.onBoneTypeChoiceButtonClick(view,2)
 
             Log.i("iSearch","$questionEndCheck")
+            //questionEndCheckが7以上になった場合、つまり質問が終了した場合、診断終了画面に遷移し、質問のカウント数を初期化する
             if (questionEndCheck > 7){
                 findNavController().navigate(R.id.action_Diagnosis_to_DiagnosisEnd)
                 analysis.resetQuestion(view)
+                //UserクラスのuserBoneTypeに分析した骨格タイプを格納
+                User.userBoneType = analysis.analyzeBoneType()
+                Log.i("userBoneTypeCheack","${User.userBoneType}")
+
             }
         }
 

@@ -31,8 +31,7 @@ class RecommendOutfit : Fragment() {
         var flgBeforeScreen = args?.flgBeforeScreen
 
         view.findViewById<Button>(R.id.backButton).setOnClickListener {
-
-            //if (flgBeforeScreen != null) {
+            //戻るボタンを押下した場合に遷移前の画面へ戻る
                 if (flgBeforeScreen == 0) {
                     findNavController().navigate(R.id.action_RecommendOutfit_to_Home)
                 } else if (flgBeforeScreen == 1) {

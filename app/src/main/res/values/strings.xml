@@ -26,7 +26,98 @@
     <string name="straight_choice_question">身体が厚く立体的</string>
     <string name="wave_choice_question">身体は薄くスタイリッシュで線が柔らかい</string>
     <string name="natural_choice_question">骨格のフレームが目視でき、各関節が大きい</string>
-    <string name="result_text">あなたの骨格は...\nです</string>
+    <string name="result_text">あなたの骨格は...\n %1$sタイプ　です</string>
+    <string name="strong_item_text">得意アイテム</string>
+    <string name="weakness_item_text">苦手アイテム</string>
+    <string name="straight_item_comment_text">厚みのあるボディを活かした～（ここに挿入するのは得意・苦手アイテムの説明を要約した文章）</string>
+    <string name="wave_item_comment_text">厚みのあるボディを活かした～（ここに挿入するのは得意・苦手アイテムの説明を要約した文章）</string>
+    <string name="natural_item_comment_text">厚みのあるボディを活かした～（ここに挿入するのは得意・苦手アイテムの説明を要約した文章）</string>
+    <string name="strong_material_text">得意素材</string>
+    <string name="weakness_material_text">苦手素材</string>
+    <string name="straight_material_comment_text">厚みのあるボディを活かした～（ここに挿入するのは得意・苦手素材の説明を要約した文章）</string>
+    <string name="wave_material_comment_text">厚みのあるボディを活かした～（ここに挿入するのは得意・苦手素材の説明を要約した文章）</string>
+    <string name="natural_material_comment_text">厚みのあるボディを活かした～（ここに挿入するのは得意・苦手素材の説明を要約した文章）</string>
+    <string name="strong_pattern_text">得意柄</string>
+    <string name="straight_pattern_comment_text">厚みのあるボディを活かした～（ここに挿入するのは得意柄の説明を要約した文章と、柄の得意不得意は骨格以外の要因も関係してくるためあくまで目安という文章）</string>
+    <string name="wave_pattern_comment_text">厚みのあるボディを活かした～（ここに挿入するのは得意柄の説明を要約した文章と、柄の得意不得意は骨格以外の要因も関係してくるためあくまで目安という文章）</string>
+    <string name="natural_pattern_comment_text">厚みのあるボディを活かした～（ここに挿入するのは得意柄の説明を要約した文章と、柄の得意不得意は骨格以外の要因も関係してくるためあくまで目安という文章）</string>
+    <string name="bone_type_description_text">ストレートタイプの特徴</string>
+    <string name="straight_description_comment_text">
+        他タイプに比べ\n
+        ・肌質→筋肉質でハリがある\n
+        ・立体感→厚みがあり立体的である\n
+        ・重心→真ん中重心　ジャストウエストで合わせる\n
+        ・指がやや短め\n
+        ・手首を側面から見た時に、楕円型ではなく厚みがあり丸い\n
+        ・鎖骨が目立たない\n
+        ・首があまり長くない\n
+        等がストレートタイプにはあります。\n
+        ストレートタイプ＜持ちやすい悩み＞\
+        ・ボディの立体感から、着太りしやすくなる\n
+        ・首が短めの為、ハイネックを選ぶのが難しい\n
+        ・フィットをさせても身体の肉感を拾ってしまう\n
+        ・逆にゆるいサイズを着ると、厚みに更にボリュームがのりより着太りしてしまう。\n
+        ・フィットさせすぎず、ゆるすぎない\n
+        ＜付かず離れず＞のIラインシルエットがスタイルを良く見せる為の最重要ポイントとなります。</string>
+    <string name="wave_description_comment_text">
+        他タイプに比べ\n
+        ・肌質→筋肉質でハリがある\n
+        ・立体感→厚みがあり立体的である\n
+        ・重心→真ん中重心　ジャストウエストで合わせる\n
+        ・指がやや短め\n
+        ・手首を側面から見た時に、楕円型ではなく厚みがあり丸い\n
+        ・鎖骨が目立たない\n
+        ・首があまり長くない\n
+        等がストレートタイプにはあります。\n
+        ストレートタイプ＜持ちやすい悩み＞\
+        ・ボディの立体感から、着太りしやすくなる\n
+        ・首が短めの為、ハイネックを選ぶのが難しい\n
+        ・フィットをさせても身体の肉感を拾ってしまう\n
+        ・逆にゆるいサイズを着ると、厚みに更にボリュームがのりより着太りしてしまう。\n
+        ・フィットさせすぎず、ゆるすぎない\n
+        ＜付かず離れず＞のIラインシルエットがスタイルを良く見せる為の最重要ポイントとなります。</string>
+    <string name="natural_description_comment_text">
+        他タイプに比べ\n
+        ・肌質→筋肉質でハリがある\n
+        ・立体感→厚みがあり立体的である\n
+        ・重心→真ん中重心　ジャストウエストで合わせる\n
+        ・指がやや短め\n
+        ・手首を側面から見た時に、楕円型ではなく厚みがあり丸い\n
+        ・鎖骨が目立たない\n
+        ・首があまり長くない\n
+        等がストレートタイプにはあります。\n
+        ストレートタイプ＜持ちやすい悩み＞\
+        ・ボディの立体感から、着太りしやすくなる\n
+        ・首が短めの為、ハイネックを選ぶのが難しい\n
+        ・フィットをさせても身体の肉感を拾ってしまう\n
+        ・逆にゆるいサイズを着ると、厚みに更にボリュームがのりより着太りしてしまう。\n
+        ・フィットさせすぎず、ゆるすぎない\n
+        ＜付かず離れず＞のIラインシルエットがスタイルを良く見せる為の最重要ポイントとなります。</string>
+    <string name="one_point_advice_text">ワンポイントアドバイス</string>
+    <string name="straight_one_point_advice_comment_text">
+        似合わせる為のポイントは\n
+        ①薄すぎず厚すぎない、ハリのある素材\n
+        ②付かず離れずのIラインシルエット\n
+        ③小物等で立体感を出しすぎず\n
+        引き算を意識してシンプルに\n
+        これらをおさえる事で\n
+        よりスタイル良く着映えるスタイリングをする事が出来ます。</string>
+    <string name="wave_one_point_advice_comment_text">
+        似合わせる為のポイントは\n
+        ①薄すぎず厚すぎない、ハリのある素材\n
+        ②付かず離れずのIラインシルエット\n
+        ③小物等で立体感を出しすぎず\n
+        引き算を意識してシンプルに\n
+        これらをおさえる事で\n
+        よりスタイル良く着映えるスタイリングをする事が出来ます。</string>
+    <string name="natural_one_point_advice_comment_text">
+        似合わせる為のポイントは\n
+        ①薄すぎず厚すぎない、ハリのある素材\n
+        ②付かず離れずのIラインシルエット\n
+        ③小物等で立体感を出しすぎず\n
+        引き算を意識してシンプルに\n
+        これらをおさえる事で\n
+        よりスタイル良く着映えるスタイリングをする事が出来ます。</string>
     <string name="to_home_button">ホームへ</string>
     <string name="to_recommend_outfit_button">おすすめコーデ</string>
 

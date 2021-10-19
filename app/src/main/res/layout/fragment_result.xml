@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FCFCEC"
-    tools:context=".Credit" >
+    tools:context=".Credit">
 
     <Button
         android:id="@+id/toRecommendOutfitButton"
@@ -46,19 +46,542 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.931" />
 
-    <TextView
-        android:id="@+id/resultText"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/result_text"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+        android:layout_weight="1"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/resultText"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/result_text"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/strongItemText"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:text="@string/strong_item_text"
+                android:textSize="24sp" />
+
+            <View
+                android:id="@+id/strongItemDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/strongItem01"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="得意アイテム01"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/strongItem02"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/strongItem03"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/strongItem04"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/strongItem05"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/strongItem06"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/strongItem07"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/strongItem08"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/weaknessItemText"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:text="@string/weakness_item_text"
+                android:textSize="24sp" />
+
+            <View
+                android:id="@+id/weaknessItemDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/weaknessItem01"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/weaknessItem02"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/weaknessItem03"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/weaknessItem04"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/weaknessItem05"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/weaknessItem06"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/weaknessItem07"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/weaknessItem08"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/itemCommentText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/straight_item_comment_text"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/strongMaterialText"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:text="@string/strong_material_text"
+                android:textSize="24sp" />
+
+            <View
+                android:id="@+id/strongMaterialDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/strongMaterial01"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/strongMaterial02"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/strongMaterial03"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/strongMaterial04"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/strongMaterial05"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/strongMaterial06"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/strongMaterial07"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/strongMaterial08"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/weaknessMaterialText"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:text="@string/weakness_material_text"
+                android:textSize="24sp" />
+
+            <View
+                android:id="@+id/weaknessMaterialDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/weaknessMaterial01"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/weaknessMaterial02"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/weaknessMaterial03"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/weaknessMaterial04"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+            </LinearLayout>
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/weaknessMaterial05"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"
+                android:contentDescription="TODO"
+                android:src="@android:drawable/ic_menu_help" />
+
+            <ImageView
+                android:id="@+id/weaknessMaterial06"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"
+                android:contentDescription="TODO"
+                android:src="@android:drawable/ic_menu_help" />
+
+            <ImageView
+                android:id="@+id/weaknessMaterial07"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"
+                android:contentDescription="TODO"
+                android:src="@android:drawable/ic_menu_help" />
+
+            <ImageView
+                android:id="@+id/weaknessMaterial08"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"
+                android:contentDescription="TODO"
+                android:src="@android:drawable/ic_menu_help" />
+
+        </LinearLayout>
+
+            <TextView
+                android:id="@+id/materialCommentText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/straight_material_comment_text"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/strongPatternText"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:text="@string/strong_pattern_text"
+                android:textSize="24sp" />
+
+            <View
+                android:id="@+id/strongPatternDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/strongPattern01"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/strongPattern02"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/strongPattern03"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <ImageView
+                    android:id="@+id/strongPattern04"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="TODO"
+                    android:src="@android:drawable/ic_menu_help" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/patternCommentText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/straight_pattern_comment_text"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/boneTypeDescriptionText"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:text="@string/bone_type_description_text"
+                android:textSize="24sp" />
+
+            <View
+                android:id="@+id/boneTypeDescriptionDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/boneTypeDescriptionCommentText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/straight_description_comment_text"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/onePointAdviceText"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:text="@string/one_point_advice_text"
+                android:textSize="24sp" />
+
+            <View
+                android:id="@+id/onePointAdviceDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/onePointAdviceCommentText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/straight_one_point_advice_comment_text"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
