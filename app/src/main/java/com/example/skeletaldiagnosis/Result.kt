@@ -1,29 +1,21 @@
 package com.example.skeletaldiagnosis
 
 import android.app.AlertDialog
-import android.app.Dialog
-import android.content.DialogInterface
 import android.graphics.Point
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.widget.Button
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.davemorrissey.labs.subscaleview.ImageSource
+import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
 import com.example.skeletaldiagnosis.db.ItemDatabase
 
 
 class Result : Fragment() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,11 +30,13 @@ class Result : Fragment() {
 
         //DBに接続する処理
         val database = ItemDatabase.getInstance(requireActivity())
-        val ItemDao = database.itemDao()
+        val itemDao = database.itemDao()
         // User一覧の取得
-        val ItemList = ItemDao.getAll()
+        val itemList = itemDao.getAll()
 
-        Log.i("Db", "$ItemList")
+
+
+        //Log.i("Db", "$ItemList")
 
 
         val resultText = view.findViewById<TextView>(R.id.resultText)
@@ -51,6 +45,15 @@ class Result : Fragment() {
             0 -> {
                 val boneTypeText = getString(R.string.result_text, "ストレート")
                 resultText.text = boneTypeText
+
+                /*
+                //item_bone_typeが0（ストレートタイプ）のアイテムを抽出
+                val strongItemList = itemDao.getStrongStraightAll()
+                while (strongItemList.isEmpty()){
+                    val strongItemIamge = ImageView(context)
+                    strongItemIamge.setImageResource(strongItemList.indexOf(0))
+                }
+                */
 
                 //得意アイテムに張り替える処理
                 //ここら辺は省略するためにメソッドで対応？
@@ -70,6 +73,7 @@ class Result : Fragment() {
                     .setImageResource(R.drawable.white_t_shirt)
                 view.findViewById<ImageView>(R.id.strongItem08)
                     .setImageResource(R.drawable.white_t_shirt)
+
                 //苦手アイテムに張り替える処理
                 view.findViewById<ImageView>(R.id.weaknessItem01)
                     .setImageResource(R.drawable.white_t_shirt)
@@ -150,7 +154,7 @@ class Result : Fragment() {
 
         }
 
-        scaleUpImage(view.findViewById<ImageView>(R.id.strongItem01), ItemList[0].toString())
+        scaleUpImage(view.findViewById(R.id.strongItem01), "a")
 
 
 
@@ -168,30 +172,24 @@ class Result : Fragment() {
 
     }
 
-    fun scaleUpImage(image: ImageView,name: String){
+    fun scaleUpImage(image: ImageView, name: String){
         // レイアウトオブジェクトから拡大対象のImageViewを取得
         // 拡大対象のImageViewにタップ時のリスナーをセット
-        image?.setOnClickListener {
-            val imageView = ImageView(requireContext())
-            val bitmap = (image?.drawable as BitmapDrawable).bitmap
-            imageView.setImageBitmap(bitmap)
-            // ディスプレイの幅を取得する（API 13以上）
-            val display: Display? = activity?.windowManager?.defaultDisplay
-            val size = Point()
-            display?.getSize(size)
-            val width: Int = size.x
-            val factor = (width / bitmap.width).toFloat()
-            imageView.scaleType = ImageView.ScaleType.FIT_CENTER
-            // ダイアログを作成する
-            val dialog = Dialog(requireContext())
-            // タイトルを非表示にする
-            dialog.window?.requestFeature(Window.FEATURE_NO_TITLE)
-            dialog.setTitle("test")
-            dialog.setContentView(imageView)
-            dialog.window?.setLayout((bitmap.width * factor).toInt(),
-                (bitmap.height * factor).toInt())
-            // ダイアログを表示する
-            dialog.show()
+        image.setOnClickListener {
+            //SubsamplingScaleImageViewのライブラリをbuild.gradle(モジュール)で別途インストールする操作が必要
+            val imageViewEnlarged = SubsamplingScaleImageView(requireContext())
+            val bitmap = (image.drawable as BitmapDrawable).bitmap
+            imageViewEnlarged.setImage(ImageSource.bitmap(bitmap))
+
+            val builder = AlertDialog.Builder(activity)
+
+            builder.setView(imageViewEnlarged)
+            //タイトルはDBから取得
+            builder.setTitle("白Tシャツ")
+            //説明文はDBから取得
+            builder.setMessage("白いTシャツ。それはそれは白いTシャツ。")
+            builder.setNegativeButton("閉じる", null)
+            builder.show()
 
 
         }
