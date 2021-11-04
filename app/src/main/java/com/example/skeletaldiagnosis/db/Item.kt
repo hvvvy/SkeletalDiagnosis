@@ -7,8 +7,8 @@ import java.util.*
 
 @Entity
 data class Item(
-    //自動でidが割り振られる主キー
-    @PrimaryKey(autoGenerate = true)
+
+    @PrimaryKey(autoGenerate = true)    //自動でidが割り振られる主キー
     val item_id: Int,
     val item_name: String,
     val item_image: String,
