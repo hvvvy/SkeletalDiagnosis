@@ -17,7 +17,7 @@ class DataCreate {
             // 新規Itemの作成
             val trenchCoat = Item(0,
                 "トレンチコート",
-                "filenobasyo",
+                "trench_coat",
                 0,
                 1,
                 0,
@@ -31,7 +31,7 @@ class DataCreate {
 
             val jacket = Item(0,
                 "ジャケット",
-                "filenobasyo",
+                "jacket",
                 0,
                 4,
                 0,
@@ -45,7 +45,7 @@ class DataCreate {
 
             val duffleCoat = Item(0,
                 "ダッフルコート",
-                "filenobasyo",
+                "duffle_coat",
                 2,
                 0,
                 0,
@@ -59,7 +59,7 @@ class DataCreate {
 
             val foodBlouson = Item(0,
                 "フードブルゾン",
-                "filenobasyo",
+                "food_blouson",
                 1,
                 4,
                 0,
@@ -73,7 +73,7 @@ class DataCreate {
 
             val shortBlouson = Item(0,
                 "ショートブルゾン",
-                "filenobasyo",
+                "short_blouson",
                 2,
                 4,
                 0,
@@ -87,7 +87,7 @@ class DataCreate {
 
             val vNeckTopps = Item(0,
                 "Vネックトップス",
-                "filenobasyo",
+                "v_neck_tops",
                 0,
                 1,
                 1,
@@ -110,7 +110,7 @@ class DataCreate {
 
             val slacks = Item(0,
                 "スラックス",
-                "filenobasyo",
+                "slacks",
                 0,
                 1,
                 0,
@@ -126,7 +126,7 @@ class DataCreate {
             //これはテストデータ
             val test = Item(0,
                 "ススッスス",
-                "filenobasyo",
+                "slacks",
                 0,
                 1,
                 0,

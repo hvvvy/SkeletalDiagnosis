@@ -48,6 +48,10 @@
             android:name="flgBeforeScreen"
             app:argType="integer"/>
 
+        <argument
+            android:name="judgeBoneTypeId"
+            app:argType="integer"/>
+
         <action
             android:id="@+id/action_RecommendOutfit_to_Home"
             app:destination="@id/Home" />

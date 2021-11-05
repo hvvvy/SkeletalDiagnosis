@@ -27,7 +27,9 @@ Home : Fragment() {
             findNavController().navigate(R.id.action_Home_to_Diagnosis)
         }
         view.findViewById<Button>(R.id.outfitButton).setOnClickListener {
-            val action = HomeDirections.actionHomeToRecommendOutfit(0)
+            //ここにダイアログ表示して骨格タイプ選択する処理
+            val selectBoneType = 0
+            val action = HomeDirections.actionHomeToRecommendOutfit(0,selectBoneType)
             findNavController().navigate(action)
         }
         view.findViewById<Button>(R.id.creditButton).setOnClickListener {

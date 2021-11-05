@@ -120,6 +120,7 @@
         よりスタイル良く着映えるスタイリングをする事が出来ます。</string>
     <string name="to_home_button">ホームへ</string>
     <string name="to_recommend_outfit_button">おすすめコーデ</string>
+    <string name="to_day_recommend_outfit">本日のおすすめコーデイメージ</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 </resources>
