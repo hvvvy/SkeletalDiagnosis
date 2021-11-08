@@ -27,14 +27,17 @@ Home : Fragment() {
             findNavController().navigate(R.id.action_Home_to_Diagnosis)
         }
         view.findViewById<Button>(R.id.outfitButton).setOnClickListener {
-            //ここにダイアログ表示して骨格タイプ選択する処理
-            val selectBoneType = 0
-            val action = HomeDirections.actionHomeToRecommendOutfit(0,selectBoneType)
-            findNavController().navigate(action)
+            // DialogFragment#show()メソッドでダイアログを表示
+            //フラグメントがアクティビティに追加されているかどうかをチェック
+             val activity = activity
+            if (isAdded && activity != null) {
+                ItemsAlertDialogFragment().apply {
+                    show(activity.supportFragmentManager, "ItemAlertDialogFragment")
+                }
+            }
         }
         view.findViewById<Button>(R.id.creditButton).setOnClickListener {
             findNavController().navigate(R.id.action_Home_to_Credit)
         }
-
     }
 }

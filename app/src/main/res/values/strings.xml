@@ -121,6 +121,9 @@
     <string name="to_home_button">ホームへ</string>
     <string name="to_recommend_outfit_button">おすすめコーデ</string>
     <string name="to_day_recommend_outfit">本日のおすすめコーデイメージ</string>
+    <string name="cushion_empty_text">\n\n\n\n\n</string>
+    <string name="dialog_title">骨格タイプを選択してください</string>
+    <string name="dialog_close">閉じる</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

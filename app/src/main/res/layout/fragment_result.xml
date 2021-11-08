@@ -262,6 +262,13 @@
                 android:text="@string/straight_one_point_advice_comment_text"
                 android:textSize="18sp" />
 
+            <TextView
+                android:id="@+id/cushionEmptyText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/cushion_empty_text"
+                android:textSize="18sp" />
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

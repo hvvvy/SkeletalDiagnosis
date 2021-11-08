@@ -1,8 +1,6 @@
 package com.example.skeletaldiagnosis.db
 
-import android.app.Activity
 import android.content.Context
-import android.util.Log
 import java.time.LocalDate
 
 class DataCreate {
@@ -99,14 +97,61 @@ class DataCreate {
             // Itemテーブルにレコードを追加
             itemDao.insert(vNeckTopps)
 
-            
+            val highGaugeKnit = Item(0,
+                "ハイゲージニット",
+                "high_gauge_knit",
+                0,
+                2,
+                1,
+                "hogehoge",
+                "hvvvy",
+                LocalDate.now().toString(),
+                "hvvvy",
+                LocalDate.now().toString())
+            // Itemテーブルにレコードを追加
+            itemDao.insert(highGaugeKnit)
 
+            val lowGaugeKnit = Item(0,
+                "ローゲージニット",
+                "low_gauge_knit",
+                2,
+                0,
+                1,
+                "hogehgoe",
+                "hvvvy",
+                LocalDate.now().toString(),
+                "hvvvy",
+                LocalDate.now().toString())
+            // Itemテーブルにレコードを追加
+            itemDao.insert(lowGaugeKnit)
 
+            val turtleNeckKnit = Item(0,
+                "タートルネックニット",
+                "turtle_neck_knit",
+                1,
+                0,
+                1,
+                "hogehoge",
+                "hvvvy",
+                LocalDate.now().toString(),
+                "hvvvy",
+                LocalDate.now().toString())
+            // Itemテーブルにレコードを追加
+            itemDao.insert(turtleNeckKnit)
 
-
-
-
-
+            val shoulderDropTops = Item(0,
+                "肩落ちトップス",
+                "shoulder_drop_tops",
+                4,
+                1,
+                1,
+                "hogehoge",
+                "hvvvy",
+                LocalDate.now().toString(),
+                "hvvvy",
+                LocalDate.now().toString())
+            // Itemテーブルにレコードを追加
+            itemDao.insert(shoulderDropTops)
 
             val slacks = Item(0,
                 "スラックス",
@@ -114,13 +159,32 @@ class DataCreate {
                 0,
                 1,
                 0,
-                "どんなシーンでも大人らしさを演出できる万能アイテム。迷ったらコレ着とけ。",
+                "センタープレスパンツ。キレイ目なコーディネイトと相性抜群。",
                 "hvvvy",
                 LocalDate.now().toString(),
                 "hvvvy",
                 LocalDate.now().toString())
             // Itemテーブルにレコードを追加
             itemDao.insert(slacks)
+
+            val skinnyPants = Item(0,
+                "スキニーパンツ",
+                "skinny_pants",
+                4,
+                0,
+                1,
+                "hogehoge",
+                "hvvvy",
+                LocalDate.now().toString(),
+                "hvvvy",
+                LocalDate.now().toString())
+            // Itemテーブルにレコードを追加
+            itemDao.insert(skinnyPants)
+
+
+
+
+
 
 
             //これはテストデータ

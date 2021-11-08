@@ -18,11 +18,6 @@ import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
 import com.example.skeletaldiagnosis.db.Item
 import com.example.skeletaldiagnosis.db.ItemDatabase
 
-
-
-
-
-
 class Result : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,15 +30,6 @@ class Result : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //DBに接続する処理
-        val database = ItemDatabase.getInstance(requireActivity())
-        val itemDao = database.itemDao()
-        // User一覧の取得
-        val itemList = itemDao.getAll()
-
-
-        //Log.i("Db", "$ItemList")
-
         //診断結果に応じて結果画面に表示する画像をセットする処理
         createResultScreen(User.userBoneType)
 
@@ -52,7 +38,7 @@ class Result : Fragment() {
         }
 
         view.findViewById<Button>(R.id.toRecommendOutfitButton).setOnClickListener {
-            val action = ResultDirections.actionResultToRecommendOutfit(1,User.userBoneType)
+            val action = ResultDirections.actionResultToRecommendOutfit(1, User.userBoneType)
             findNavController().navigate(action)
         }
     }
@@ -82,40 +68,10 @@ class Result : Fragment() {
 
 
     private fun createResultScreen(judgeBoneTypeNum: Int) {
-        //丸々要らんかも・・・
-        /*//DBに接続する処理
-        val database = ItemDatabase.getInstance(requireActivity())
-        val itemDao = database.itemDao()
 
-        val strongFashionComponentList = when(judgeBoneTypeNum){
-        //item_bone_typeが0（ストレートタイプ）のアイテムを抽出
-            0 -> itemDao.getStrongStraightAll()
-            1 -> itemDao.getStrongWaveAll()
-            2 -> itemDao.getStrongNaturalAll()
-            //ダミー
-            else -> itemDao.getStrongNaturalAll()
-        }*/
         val resultText = view?.findViewById<TextView>(R.id.resultText)
         val boneTypeText = getString(R.string.result_text, "ストレート")
         resultText?.text = boneTypeText
-
-        //ここにコメントアウトしたwhen式使えるかも
-        val strongItemResource = listOf(R.drawable.v_neck_tops,
-            R.drawable.v_neck_tops,
-            R.drawable.v_neck_tops,
-            R.drawable.v_neck_tops,
-            R.drawable.v_neck_tops,
-            R.drawable.v_neck_tops,
-            R.drawable.v_neck_tops)
-
-        val weaknessItemResource = listOf(R.drawable.food_blouson,
-            R.drawable.food_blouson,
-            R.drawable.food_blouson,
-            R.drawable.food_blouson,
-            R.drawable.food_blouson,
-            R.drawable.food_blouson,
-            R.drawable.food_blouson)
-
 
         val database = ItemDatabase.getInstance(requireActivity())
         val itemDao = database.itemDao()
@@ -124,38 +80,38 @@ class Result : Fragment() {
                 val resultText = view?.findViewById<TextView>(R.id.resultText)
                 val boneTypeText = getString(R.string.result_text, "ストレート")
                 resultText?.text = boneTypeText
-                imageSet(itemDao.getStrongStraightAll(), strongItemResource, 0)
-                imageSet(itemDao.getWeaknessStraightAll(), weaknessItemResource, 1)
+                imageSet(itemDao.getStrongStraightAll(), 0)
+                imageSet(itemDao.getWeaknessStraightAll(), 1)
             }
             1 -> {
                 val resultText = view?.findViewById<TextView>(R.id.resultText)
                 val boneTypeText = getString(R.string.result_text, "ウェーブ")
                 resultText?.text = boneTypeText
-                imageSet(itemDao.getStrongWaveAll(), strongItemResource, 0)
-                imageSet(itemDao.getWeaknessWaveAll(), weaknessItemResource, 1)
+                imageSet(itemDao.getStrongWaveAll(), 0)
+                imageSet(itemDao.getWeaknessWaveAll(), 1)
             }
             2 -> {
                 val resultText = view?.findViewById<TextView>(R.id.resultText)
                 val boneTypeText = getString(R.string.result_text, "ナチュラル")
                 resultText?.text = boneTypeText
-                imageSet(itemDao.getStrongNaturalAll(), strongItemResource, 0)
-                imageSet(itemDao.getWeaknessNaturalAll(), weaknessItemResource, 1)
+                imageSet(itemDao.getStrongNaturalAll(), 0)
+                imageSet(itemDao.getWeaknessNaturalAll(), 1)
             }
         }
-
     }
 
     private fun imageSet(
         fashionComponentList: List<Item>,
-        imageResource: List<Int>,
         strongOrWeaknessJudgeFlg: Int,
     ) {
         val fashionComponentImageView: MutableList<ImageView> = mutableListOf()
         for (num in fashionComponentList.indices) {
             fashionComponentImageView.add(ImageView(context)) //ImageViewをデータの数だけ生成
             //item_imageに格納しているリソース画像のファイル名を取得し、文字列からInt型へ変換
-            val strId = resources.getIdentifier(fashionComponentList[num].item_image,"drawable", requireActivity().packageName)
-            Log.i("strId","$strId")
+            val strId = resources.getIdentifier(fashionComponentList[num].item_image,
+                "drawable",
+                requireActivity().packageName)
+            Log.i("strId", "$strId")
             fashionComponentImageView[num].setImageResource(strId)  //ImageViewに画像セット
 
             //ImageViewの横幅、高さ、割合をコンストラクタで設定
@@ -213,7 +169,6 @@ class Result : Fragment() {
                 //苦手な場合
             } else {
                 //ファッション要素のitem_category_idでカテゴリを判断
-
                 if (5 == fashionComponentList[num].item_category_id) {  //item_category_id == 5は柄
                     //imageViewが4つ以上で次のLinerLayautへ移行
                     if (4 > num) {
@@ -249,7 +204,6 @@ class Result : Fragment() {
                         weaknessItemLayout02.addView(fashionComponentImageView[num])
                     }
                 }
-
             }
 
             //nullじゃなければscaleUpImageを呼び出して画像拡大＆詳細情報表示
@@ -259,6 +213,5 @@ class Result : Fragment() {
                     fashionComponentList[num].item_description)
             }
         }
-
     }
 }
