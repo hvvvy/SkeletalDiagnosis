@@ -7,22 +7,22 @@ interface ItemDao {
     @Query("SELECT * FROM item")
     fun getAll(): List<Item>
 
-    @Query("SELECT * FROM item WHERE bone_type_id = 0")
+    @Query("SELECT * FROM item WHERE strong_straight_flg = 1")
     fun getStrongStraightAll(): List<Item>
 
-    @Query("SELECT * FROM item WHERE bone_type_id = 1")
+    @Query("SELECT * FROM item WHERE strong_wave_flg = 1")
     fun getStrongWaveAll(): List<Item>
 
-    @Query("SELECT * FROM item WHERE bone_type_id = 2")
+    @Query("SELECT * FROM item WHERE strong_natural_flg = 1")
     fun getStrongNaturalAll(): List<Item>
 
-    @Query("SELECT * FROM item WHERE weaknesses_bone_type = 0")
+    @Query("SELECT * FROM item WHERE weakness_straight_flg = 1")
     fun getWeaknessStraightAll(): List<Item>
 
-    @Query("SELECT * FROM item WHERE weaknesses_bone_type = 1")
+    @Query("SELECT * FROM item WHERE weakness_wave_flg = 1")
     fun getWeaknessWaveAll(): List<Item>
 
-    @Query("SELECT * FROM item WHERE weaknesses_bone_type = 2")
+    @Query("SELECT * FROM item WHERE weakness_natural_flg = 1")
     fun getWeaknessNaturalAll(): List<Item>
 
     @Insert

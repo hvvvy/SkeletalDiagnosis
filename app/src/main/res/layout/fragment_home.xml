@@ -23,7 +23,7 @@
 
     <Button
         android:id="@+id/diagnosisStartButton"
-        android:layout_width="213dp"
+        android:layout_width="227dp"
         android:layout_height="51dp"
         android:shadowColor="#613030"
         android:shadowDx="7"
@@ -44,7 +44,7 @@
 
     <Button
         android:id="@+id/outfitButton"
-        android:layout_width="213dp"
+        android:layout_width="227dp"
         android:layout_height="51dp"
         android:shadowColor="#613030"
         android:shadowDx="7"
@@ -66,9 +66,8 @@
 
     <Button
         android:id="@+id/creditButton"
-        android:layout_width="172dp"
+        android:layout_width="186dp"
         android:layout_height="51dp"
-        android:onClick="goToCregit"
         android:shadowColor="#613030"
         android:shadowDx="7"
         android:shadowDy="5"

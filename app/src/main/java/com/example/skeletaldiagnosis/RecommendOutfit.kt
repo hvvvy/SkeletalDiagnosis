@@ -55,14 +55,14 @@ class RecommendOutfit : Fragment() {
             }
             1 -> {
                 //画像仮置き
-                val recommendOutfitImageList = listOf(R.drawable.straight_styling01,R.drawable.straight_styling02,R.drawable.straight_styling03)
+                val recommendOutfitImageList = listOf(R.drawable.wave_styling01,R.drawable.wave_styling02)
                 val range = (recommendOutfitImageList.indices)
                 val randomStraightStyling = range.random()
                 recommendOutfitImage?.setImageResource(recommendOutfitImageList[randomStraightStyling])
             }
             2 -> {
                 //画像仮置き
-                val recommendOutfitImageList = listOf(R.drawable.straight_styling01,R.drawable.straight_styling02,R.drawable.straight_styling03)
+                val recommendOutfitImageList = listOf(R.drawable.natural_styling01,R.drawable.natural_styling02)
                 val range = (recommendOutfitImageList.indices)
                 val randomStraightStyling = range.random()
                 recommendOutfitImage?.setImageResource(recommendOutfitImageList[randomStraightStyling])

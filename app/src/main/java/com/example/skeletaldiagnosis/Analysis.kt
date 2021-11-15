@@ -41,8 +41,6 @@ class Analysis(val date: LocalDate, var view:View ,var straightTypePoint: Int, v
         return boneType
     }
 
-    fun displayAnalysisResult() {}
-
     fun resetQuestion(view: View){
 
         questionsCount = 0

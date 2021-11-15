@@ -8,7 +8,7 @@ import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
 
-@Database(entities = [Item::class], version = 3)
+@Database(entities = [Item::class], version = 1)
 
 abstract class ItemDatabase : RoomDatabase() {
 
@@ -22,25 +22,12 @@ abstract class ItemDatabase : RoomDatabase() {
 
         fun getInstance(context: Context): ItemDatabase {
 
-            val MIGRATION_1_2: Migration = object : Migration(1, 2) {
-                override fun migrate(database: SupportSQLiteDatabase) {
-                    database.execSQL("ALTER TABLE Item "
-                            + " DROP COLUMN delete_name" + " DROP COLUMN delete_date")
-                }
-            }
-
-            val MIGRATION_2_3: Migration = object : Migration(2, 3) {
-                override fun migrate(database: SupportSQLiteDatabase) {
-                    database.execSQL("ALTER TABLE Item "
-                            + " ADD COLUMN item_description String")
-                }
-            }
-
             synchronized(lock) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.applicationContext,
                         ItemDatabase::class.java, "Item.db")
-                        .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
+                        //DBのデータを破壊的再作成するメソッド
+                        //.fallbackToDestructiveMigration()
                         .allowMainThreadQueries()
                         .build()
                 }
